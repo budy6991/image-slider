@@ -14,11 +14,35 @@ table.src = '../images/table.jpg'
 
 const arrayOfImages = [elvis, audio, musician, pianoTwo, piano, table]
 
+const rightArrow = document.querySelector('.right-arrow')
 const leftArrow = document.querySelector('.left-arrow')
 const imageContainer = document.querySelector('.image-container')
 
+const nextImg = () => {
+    imageContainer.removeChild(arrayOfImages[i])
+    i++
+    imageContainer.appendChild(arrayOfImages[i])
+    return i
+}
+
+const prevImg = () => {
+    imageContainer.removeChild(arrayOfImages[i])
+    i--
+    imageContainer.appendChild(arrayOfImages[i])
+    return i
+}
+
+imageContainer.appendChild(arrayOfImages[0])
+
+
+let i = 0
+
+
+rightArrow.onclick = () => {
+    nextImg(i)
+    
+}
+
 leftArrow.onclick = () => {
-    arrayOfImages.forEach(image => {
-        imageContainer.append(image)
-    })
+    prevImg(i)
 }
