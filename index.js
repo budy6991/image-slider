@@ -5,12 +5,12 @@ const pianoTwo = new Image()
 const piano = new Image()
 const table = new Image()
 
-elvis.src = './elvis.jpg'
-audio.src = './audio.jpg'
-musician.src = './musician.jpg'
-pianoTwo.src = './piano-two.jpg'
-piano.src = './piano.jpg'
-table.src = './table.jpg'
+elvis.src = '../images/elvis.jpg'
+audio.src = '../images/audio.jpg'
+musician.src = '../images/musician.jpg'
+pianoTwo.src = '../images/piano-two.jpg'
+piano.src = '../images/piano.jpg'
+table.src = '../images/table.jpg'
 
 const arrayOfImages = [elvis, audio, musician, pianoTwo, piano, table]
 
