@@ -18,10 +18,20 @@ const rightArrow = document.querySelector('.right-arrow')
 const leftArrow = document.querySelector('.left-arrow')
 const imageContainer = document.querySelector('.image-container')
 
+let i = 0
+
+
+
 const nextImg = () => {
     imageContainer.removeChild(arrayOfImages[i])
     i++
     imageContainer.appendChild(arrayOfImages[i])
+    if (i >= arrayOfImages.length-1) {
+        imageContainer.removeChild(arrayOfImages[i])
+        i = -1 
+        i++
+        imageContainer.appendChild(arrayOfImages[i])
+    }
     return i
 }
 
@@ -35,14 +45,14 @@ const prevImg = () => {
 imageContainer.appendChild(arrayOfImages[0])
 
 
-let i = 0
 
 
 rightArrow.onclick = () => {
-    nextImg(i)
-    
+    nextImg()
+    console.log(i)
 }
 
 leftArrow.onclick = () => {
-    prevImg(i)
+    prevImg()
+    
 }
