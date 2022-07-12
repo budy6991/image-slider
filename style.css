@@ -17,12 +17,12 @@ img {
     display: flex;
     justify-content: center;
     background-color: antiquewhite;
+    background: radial-gradient(rgb(213, 39, 39), rgb(0, 0, 0));
 }
 
 .slideshow-container{
     width: 80vw;
     height: 90vh;
-    background-color: pink;
     display: grid;
     grid-template-columns: repeat(2,1fr) repeat(1,3fr) repeat(2,1fr);
     grid-template-rows: repeat(2,1fr) repeat(1,2fr) repeat(2,1fr);
@@ -59,7 +59,7 @@ img {
 }
 
 .left-arrow:hover, .right-arrow:hover, .pause:hover {
-    transform: scale(.8); 
+    transform: scale(.7); 
     cursor: pointer;
 }
 
