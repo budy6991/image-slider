@@ -36,7 +36,11 @@ img {
 }
 
 .left-arrow {
-    background-image: url('../images/previous.png');
+    display: flex;
+    justify-self: end;
+    align-self: center;
+    content: url('../images/previous.png');
+    max-width: 25%;
     background-size: contain;
     background-repeat: no-repeat;
     grid-column: 2/3 ;
@@ -45,7 +49,9 @@ img {
 }
 
 .right-arrow {
-    background-image: url('../images/next.png');
+    content: url('../images/next.png');
+    max-width: 25%;
+    align-self: center;
     background-size: contain;
     background-repeat: no-repeat;
     grid-column: 4/5;
@@ -64,8 +70,11 @@ img {
 }
 
 .pause {
-    
-    background-image: url('../images/pause.png');
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    content:  url('../images/pause.png');
+    max-width: 10%;
     grid-column: 3/4;
     grid-row: 4/5;
     background-size: contain;
