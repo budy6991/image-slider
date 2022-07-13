@@ -4,6 +4,7 @@ const musician = new Image();
 const pianoTwo = new Image();
 const piano = new Image();
 const table = new Image();
+const startOfSlideShow = new Image()
 const endOfSlideshow = new Image();
 
 elvis.src = '../images/elvis.jpg';
@@ -12,7 +13,8 @@ musician.src = '../images/musician.jpg';
 pianoTwo.src = '../images/piano-two.jpg';
 piano.src = '../images/piano.jpg';
 table.src = '../images/table.jpg';
-endOfSlideshow.src = null;
+endOfSlideshow.src = '../images/tableBlank.jpg'
+startOfSlideShow.src = '../images/elvisBlank.jpg'
 
 const arrayOfImages = [elvis, audio, musician, pianoTwo, piano, table, endOfSlideshow];
 
@@ -20,10 +22,13 @@ const rightArrow = document.querySelector('.right-arrow');
 const leftArrow = document.querySelector('.left-arrow');
 const imageContainer = document.querySelector('.image-container');
 
-imageContainer.appendChild(arrayOfImages[0]);
-let i = 0;
+imageContainer.append(arrayOfImages[0])
 
-const nextImg = () => {
+let i = 0;
+let backwards = null
+let forward = null
+
+const changeImg = () => {
   imageContainer.removeChild(arrayOfImages[i]);
   i++;
   imageContainer.appendChild(arrayOfImages[i]);
@@ -35,22 +40,18 @@ const nextImg = () => {
   return i;
 };
 
-const prevImg = () => {
-  imageContainer.removeChild(arrayOfImages[i]);
-  i--;
-  imageContainer.appendChild(arrayOfImages[i]);
-  return i;
-};
-
 
 rightArrow.onclick = () => {
-  nextImg();
-  
+    changeImg()
 };
 
 leftArrow.onclick = () => {
-
-     arrayOfImages.reverse()
-     nextImg()
-     
+    backwards = true
+    return backwards
+    
 };
+
+while (backwards === true) {
+    arrayOfImages.reverse()
+    changeImg()
+}
