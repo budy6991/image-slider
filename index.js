@@ -1,3 +1,4 @@
+(() => {
 const elvis = new Image();
 const audio = new Image();
 const musician = new Image();
@@ -21,8 +22,9 @@ const rightArrow = document.querySelector('.right-arrow');
 const leftArrow = document.querySelector('.left-arrow');
 const imageContainer = document.querySelector('.image-container');
 const pauseBtn = document.querySelector('.pause')
+let pressed = false
+let unPressed = true
 
-let btnpress = true
 
 
 imageContainer.append(arrayOfImages[0])
@@ -63,6 +65,24 @@ rightArrow.onclick = () => {
 
 leftArrow.onclick = () => {
     prevImg()  
-    
 };
 
+
+pauseBtn.onclick = () => {
+  if (unPressed === true){
+    unPressed = false
+    pressed = true
+    console.log(`Pressed: ${pressed}, Unpressed: ${unPressed}`)
+    clearInterval(myInterval)
+  }
+  else if (pressed === true){
+    pressed = false 
+    unPressed = true
+    console.log(`Pressed: ${pressed}, Unpressed: ${unPressed}`)
+    myInterval = setInterval(nextImg, 5000)
+  }
+}
+
+let myInterval = setInterval(nextImg, 5000)
+
+})();
