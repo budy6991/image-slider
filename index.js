@@ -5,7 +5,6 @@ const musician = new Image();
 const pianoTwo = new Image();
 const piano = new Image();
 const table = new Image();
-const startOfSlideShow = new Image()
 const endOfSlideshow = new Image();
 
 elvis.src = '../images/elvis.jpg';
@@ -24,8 +23,6 @@ const imageContainer = document.querySelector('.image-container');
 const pauseBtn = document.querySelector('.pause')
 let pressed = false
 let unPressed = true
-
-
 
 imageContainer.append(arrayOfImages[0])
 
@@ -54,13 +51,11 @@ const prevImg = () => {
     i--;
     imageContainer.appendChild(arrayOfImages[i]);
   }
-  
   return i;
 }
 
 rightArrow.onclick = () => {
     nextImg()
-    
 };
 
 leftArrow.onclick = () => {
@@ -72,13 +67,11 @@ pauseBtn.onclick = () => {
   if (unPressed === true){
     unPressed = false
     pressed = true
-    console.log(`Pressed: ${pressed}, Unpressed: ${unPressed}`)
     clearInterval(myInterval)
   }
   else if (pressed === true){
     pressed = false 
     unPressed = true
-    console.log(`Pressed: ${pressed}, Unpressed: ${unPressed}`)
     myInterval = setInterval(nextImg, 5000)
   }
 }
