@@ -42,16 +42,22 @@ const changeImg = () => {
 
 
 rightArrow.onclick = () => {
+    backwards = false
+    forward = true
     changeImg()
 };
 
 leftArrow.onclick = () => {
     backwards = true
-    return backwards
+    forward = false
+    if (backwards === true && forward === false) {
+        imageContainer.removeChild(arrayOfImages[i])
+        i -- 
+        imageContainer.appendChild(arrayOfImages[i])
+        if (i === 0) {
+            //Start slideshow again
+        }
+    }
     
 };
 
-while (backwards === true) {
-    arrayOfImages.reverse()
-    changeImg()
-}
