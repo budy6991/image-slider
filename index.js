@@ -15,17 +15,19 @@ piano.src = '../images/piano.jpg';
 table.src = '../images/table.jpg';
 endOfSlideshow.src = '../images/tableBlank.jpg'
 
-
 const arrayOfImages = [elvis, audio, musician, pianoTwo, piano, table];
 
 const rightArrow = document.querySelector('.right-arrow');
 const leftArrow = document.querySelector('.left-arrow');
 const imageContainer = document.querySelector('.image-container');
+const pauseBtn = document.querySelector('.pause')
+
+let btnpress = true
+
 
 imageContainer.append(arrayOfImages[0])
 
 let i = 0;
-
 
 const nextImg = () => {
   imageContainer.removeChild(arrayOfImages[i]);
@@ -43,7 +45,6 @@ const prevImg = () => {
   if (i === 0) {
     imageContainer.removeChild(arrayOfImages[i]);
     i = arrayOfImages.length-1;
-    console.log(i)
     imageContainer.appendChild(arrayOfImages[i]);
   }
   else {
@@ -57,9 +58,11 @@ const prevImg = () => {
 
 rightArrow.onclick = () => {
     nextImg()
+    
 };
 
 leftArrow.onclick = () => {
     prevImg()  
+    
 };
 
