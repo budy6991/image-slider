@@ -7,13 +7,13 @@ const piano = new Image();
 const table = new Image();
 const endOfSlideshow = new Image();
 
-elvis.src = '../images/elvis.jpg';
-audio.src = '../images/audio.jpg';
-musician.src = '../images/musician.jpg';
-pianoTwo.src = '../images/piano-two.jpg';
-piano.src = '../images/piano.jpg';
-table.src = '../images/table.jpg';
-endOfSlideshow.src = '../images/tableBlank.jpg'
+elvis.src = './images/elvis.jpg';
+audio.src = './images/audio.jpg';
+musician.src = './images/musician.jpg';
+pianoTwo.src = './images/piano-two.jpg';
+piano.src = './images/piano.jpg';
+table.src = './images/table.jpg';
+endOfSlideshow.src = './images/tableBlank.jpg'
 
 const arrayOfImages = [elvis, audio, musician, pianoTwo, piano, table];
 
